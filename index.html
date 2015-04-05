@@ -139,9 +139,19 @@ article {
 	z-index: -100;
 }
 
-
-
 </style>
+
+<script>
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+     function () {
+     document.location = url;
+     }
+   });
+}
+</script>
+
+
 </head>
 <body>
 
@@ -154,11 +164,11 @@ article {
 		<div id="content">
 
 			<h1><img src="logo.png" alt="Butelka · Piję wodę z kranu" width="272"></h1>
-			<p>Startując półtora roku temu, zaczęliśmy odczarowywać negatywny wizerunek wody z kranu i wydaje nam się, że powoli widać tego efekty. Akcje <a href="http://gdzie.pijewodezkranu.org">Tu dostaniesz wodę z kranu</a> i <a href="https://www.facebook.com/PijeWodeZKranu">stronę na Facebooku</a> niestrudzenie prowadzimy we dwójkę, w czasie wolnym i za własne pieniądze.</p>
+			<p>Startując półtora roku temu, zaczęliśmy odczarowywać negatywny wizerunek wody z kranu i wydaje nam się, że powoli widać tego efekty. Akcję <a href="http://pijewodezkranu.org">Piję wodę z kranu</a> niestrudzenie prowadzimy we dwójkę, w czasie wolnym i za własne pieniądze.</p>
 			<p>Podjęliśmy poważną decyzję, że chcemy rozszerzyć nasze działania i  dotrzeć do większej ilości osób. Po ponad rocznej działalności mamy na to sporo pomysłów! Żeby je zrealizować, potrzebujemy konkretnych środków i czasu, więc postanowiliśmy założyć fundację. Będziemy aktywnie poszukiwać partnerów i sponsorów, którzy umożliwią nam promowanie akcji, ale potrzebujemy też odrobiny waszego wsparcia. <strong>Dlatego możecie wesprzeć akcję przez zakup praktycznej butelki:<br>cena to 49zł z czego 9zł trafi na konto naszej fundacji</strong>.</p>
 			<p style="text-align: right">— Michał i Szymon</p>
 
-			<a href="http://myequa.pl/index.php/pwzk.html" id="zamow" target="_blank">
+			<a href="http://myequa.pl/index.php/pwzk.html" id="zamow" target="_blank" onclick="trackOutboundLink(‘http://myequa.pl/index.php/pwzk.html’); return false;">
 				<img src="heart.png">
 				<span>Zamów butelkę i wesprzyj akcję!</span>
 			</a>
@@ -189,7 +199,7 @@ article {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-40132134-1', 'auto');
+  ga('create', 'UA-40132134-3', 'auto');
   ga('send', 'pageview');
 
 </script>
